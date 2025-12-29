@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+# Crear directorio de trabajo
+WORKDIR /app
+
+# Copiar el notebook al contenedor
+COPY reduc-operation-array-par-alumno18.ipynb /app/
+
+# Instalar dependencias necesarias
+RUN pip install --no-cache-dir jupyter numpy numba
+
+# Comando por defecto
+CMD ["ipython", "/app/reduc-operation-array-par-alumno18.ipynb", "100000", "2"]
+
